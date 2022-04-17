@@ -20,6 +20,8 @@ Aquí se encuentran el excel con los parámentros necesarios para hacer la simul
 
 Aquí se encuetra la simulación final con las medidas correspondientes del proyecto en un archivo .SAM para abrir en el programa y por otro lado el excel con los datos obtenidos de la simulación y la comparativa con los otros métodos.
 
+# Carpeta: bisagra principal
 
+Recoge algunos de los diseños para la bisagra principal realizados en freeCAD
 
 
