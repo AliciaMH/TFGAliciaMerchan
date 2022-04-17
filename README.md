@@ -16,4 +16,10 @@ Aquí se encuentran todos los archivos de excel relacionados con el proyecto:
 # Carpeta: código final Arduino prueba casa
 Aquí se encuentran el excel con los parámentros necesarios para hacer la simulación en casa con otro motor distinto, los csv con los vectores necesarios para el código de arduino y el propio código de arduino.
 
+# Carpeta: simulación SAM
+
+Aquí se encuetra la simulación final con las medidas correspondientes del proyecto en un archivo .SAM para abrir en el programa y por otro lado el excel con los datos obtenidos de la simulación y la comparativa con los otros métodos.
+
+
+
 
