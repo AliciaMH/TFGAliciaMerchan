@@ -13,6 +13,7 @@ Aquí se encuentran todos los archivos de excel relacionados con el proyecto:
          d) Linealización: Permite ver la correspondencia de los ángulos con la distancia recorrida por la bisagra especial. También hay una linealización que se comenta             en la memoria del TFG pero que al final no es necesaria ya que se realiza el cambio directo. 
          e) Error: Esta hoja se utilizó para la primera aproximación que se quería realizar, sin embargo, al final no fue la aproximación elegida asique se puede obviar.
          
-# Carpeta: Arduino
+# Carpeta: código final Arduino prueba casa
+Aquí se encuentran el excel con los parámentros necesarios para hacer la simulación en casa con otro motor distinto, los csv con los vectores necesarios para el código de arduino y el propio código de arduino.
 
 
