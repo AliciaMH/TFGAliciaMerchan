@@ -62,7 +62,7 @@ float rad, radf=0;                    // Variable para pasar el número de grado
 float vectort_mediomicropaso[] = {0,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,28};
 
 // El siguiente vector muestra los tiempos de cada medio paso dependiendo de la velocidad seleccionado. Este vector se encuentra en un .csv en el GitHub del autor del trabajo
-float vectort_mediopaso[] = {0,7137585.688,3568792.844,2379195.229,1784396.422,1427517.138,1189597.615,1019655.098,892198.211,793065.0764,713758.5688,648871.4262,594798.8073,549045.0529,509827.5491,475839.0459,446099.1055,419857.9816,396532.5382,375662.4046,356879.2844,339885.0328,324435.7131,310329.8125,297399.4037,285503.4275,274522.5265,264355.0255,254913.7746,246123.6444,237919.5229,230244.6996,223049.5528,216290.4754,209928.9908,203931.0197,198266.2691,192907.7213,187831.2023,183015.0176,178439.6422,174087.4558,169942.5164,165990.3648,162217.8565,158613.0153,155164.9063,151863.5253,148699.7018,145665.014,142751.7138,139952.6605,137261.2632,134671.4281,132177.5127,129774.2852,127456.8873,125220.8015,123061.8222,120976.0286,118959.7615,117009.6014,115122.3498,113295.0109,111524.7764,109809.0106,108145.2377,106531.1297,104964.4954,103443.2708,101965.5098,100529.3759,99133.13456,97775.14641,96453.86065,95167.80917,93915.60116,92695.91803,91507.50882,90349.18592,89219.8211,88118.34183,87043.7279,85995.00829,84971.25819,83971.59633,82995.18242,82041.2148,81108.92827,80197.592,79306.50764,78435.00756,77582.45313,76748.2332,75931.76264,75132.48093,74349.85092,73583.35761,72832.50702,72096.82513,900};
+float vectort_mediopaso[] = {0,7127426.627,3563713.314,2375808.876,1781856.657,1425485.325,1187904.438,1018203.804,890928.3284,791936.2919,712742.6627,647947.8752,593952.2189,548263.5867,509101.9019,475161.7751,445464.1642,419260.3898,395968.146,375127.7172,356371.3314,339401.268,323973.9376,309888.1142,296976.1095,285097.0651,274131.7934,263978.764,254550.951,245773.332,237580.8876,229916.988,222732.0821,215982.6251,209630.1949,203640.7608,197984.073,192633.1521,187563.8586,182754.5289,178185.6657,173839.6738,169700.634,165754.1076,161986.9688,158387.2584,154944.0571,151647.375,148488.0547,145457.6863,142548.5325,139753.4633,137065.8967,134479.7477,131989.382,129589.575,127275.4755,125042.5724,122886.666,120803.8411,118790.4438,116843.0595,114958.494,113133.756,111366.0411,109652.7173,107991.3125,106379.5019,104815.0975,103296.0381,101820.3804,100386.2905,98992.03649,97635.98119,96316.57604,95032.35503,93781.92931,92563.98217,91377.26445,90220.59022,89092.83284,87992.92132,86919.83692,85872.60997,84850.31699,83852.07797,82877.0538,81924.44399,80993.4844,80083.44525,79193.62919,78323.36953,77472.02856,76638.99599,75823.68752,75025.54344,74244.02737,73478.62502,72728.84313,71994.20836,900};
 
 
 // VARIABLES MAQUINA DE ESTADOS
@@ -150,8 +150,6 @@ void setup() {
   lcd.createChar(3, arrow);   // 3: número de carácter; arrow: matriz que contiene los pixeles del carácter
  
   digitalWrite(X_ENABLE_PIN , LOW);         // Habilitación a nivel bajo del motor paso a paso
-
-//  attachInterrupt(digitalPinToInterrupt(sensor1), encoder, RISING);     // Función de la interrupcion del encoder
 
   Timer3.initialize(1000000);              // Inicialización de la interrupcion del contador de segundos
   Timer3.attachInterrupt(Temporizador);    // Función de la interrupcion del contador de segundos
@@ -335,8 +333,6 @@ void DefinicionDeVariables()
             lcd.print(ang_i);
           }
           break;
-          //rad= (ang_i * pi)/180;//Hago el cambio aquí para que sólo lo realice una vez
-          //di_X= Lb*tan(rad); //¿Hay algún problema en poner los rad más de una vez? Yo creo que no porque sería secuencial
           
         default://opción 3: ir sumando y restando de 1 en 1
           if (derecha == true and ang_i +1 < AMax)
@@ -508,11 +504,7 @@ void DefinicionDeVariables()
               lcd.print(v%10);
           }
           
-          
-//        if (v <1 && v >=0){
-//        lcd.setCursor(13, 2);
-//        lcd.print(" ");
-//        }
+
         if (v <10 && v >=0){//Pongo menor que 10 porque la máxima velocidad angular es 9.9
         lcd.setCursor(15, 2);//Creo que tendría que poner 15 para que ponga el punto de los decimales. Antes estaba puesto el 14
         lcd.print(" ");
@@ -529,12 +521,7 @@ void DefinicionDeVariables()
           di_X= Lb*tan(rad);
           radf= (ang_f * pi)/180;
           df_X= Lb*tan(radf);
-          //if ((inicio == 0 && fin ==0)or(inicio == 1 && fin ==0 && (di_X > (0.0025*n_mediospasos))))   { //LO HE CAMBIADO. no tiene sentido poner esto 
-            posicion = Vmax;//Prueba para ver si se mueve a la máxima para ir a inicio o a distancia inicial
-//          }
-//          else { 
-//             posicion = v; // para el experimento lleva la velocidad indicada por el usuario
-//          }
+          posicion = Vmax;//Prueba para ver si se mueve a la máxima para ir a inicio o a distancia inicial
           t_mediomicropaso = ((unsigned long)vectort_mediomicropaso[posicion]);     
           Timer1.attachInterrupt(Micropasos);             // Funcion de la interrupcion de los micropasos
           Timer1.initialize(t_mediomicropaso);            // Inicializacion de la interrupcion de los micropasos
@@ -627,7 +614,7 @@ void experimento() {
     lcd.setCursor(12, 2);    
     lcd.print(n_mediospasos);
 
-    avance_mediospasos = (0.0025*n_mediospasos);       // Avance de cada medio paso del motor = 0.00005 mm, ya que el eje del motor tiene 2 mm/vuelta y una reduccion de 100
+    avance_mediospasos = (0.0025*n_mediospasos);       // Avance de cada medio paso del motor = 0.0025 mm, ya que el eje del motor tiene 1 mm/vuelta y da 200 pasos por vuelta
     avance_mediospasos2 = (0.0025*n_mediospasos2);     //Este segundo es para los casos en los que no empiezo a una distancia 0 sino que empiezo a distancia x=5mm por ejemplo
 
     lcd.setCursor(0, 3);
