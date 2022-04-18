@@ -14,7 +14,7 @@ Aquí se encuentran todos los archivos de excel relacionados con el proyecto:
          e) Error: Esta hoja se utilizó para la primera aproximación que se quería realizar, sin embargo, al final no fue la aproximación elegida asique se puede obviar.
          
 # Carpeta: código final Arduino prueba casa
-Aquí se encuentran el excel con los parámentros necesarios para hacer la simulación en casa con otro motor distinto, los csv con los vectores necesarios para el código de arduino y el propio código de arduino.
+Aquí se encuentran el excel con los parámentros necesarios para hacer la simulación en casa con otro motor distinto, los csv con los vectores necesarios para el código de arduino y el propio código de arduino. El archivo de arduino que contiene un -10 en el nombre es el que se usó de prueba para establecer el sensor de inicio de carrera en un lugar distinto al 0.
 
 # Carpeta: simulación SAM
 
